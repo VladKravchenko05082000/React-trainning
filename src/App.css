@@ -1,0 +1,32 @@
+.Main__wrapper{
+   display: grid;
+   width: 1200px;
+   margin: 0px auto;
+   grid-template-areas: 
+   'header header'
+   'sidebar conten';
+   grid-template-rows: 60px 1fr;
+     grid-template-columns:2fr 10fr ;
+     grid-gap: 10px;
+}
+
+.Main__header{
+   grid-area: header;
+   background-color:greenyellow;
+   display: flex;
+   align-items: center;
+}
+
+.Main__header img{
+   width: 80px;
+}
+
+.Main__sidebar{
+   grid-area: sidebar;
+   background-color: grey;
+}
+
+.Main__content{
+   grid-area: conten;
+   background-color: hotpink;
+}
