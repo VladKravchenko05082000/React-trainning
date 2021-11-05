@@ -10,23 +10,3 @@
      grid-gap: 10px;
 }
 
-.Main__header{
-   grid-area: header;
-   background-color:greenyellow;
-   display: flex;
-   align-items: center;
-}
-
-.Main__header img{
-   width: 80px;
-}
-
-.Main__sidebar{
-   grid-area: sidebar;
-   background-color: grey;
-}
-
-.Main__content{
-   grid-area: conten;
-   background-color: hotpink;
-}

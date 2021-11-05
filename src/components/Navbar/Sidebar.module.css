@@ -1,0 +1,9 @@
+.Main__sidebar{
+   grid-area: sidebar;
+   background-color: grey;
+}
+
+.item{
+   color: white;
+}
+
