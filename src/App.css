@@ -10,3 +10,8 @@
      grid-gap: 10px;
 }
 
+.Main__wrapper__content{
+    grid-area: conten;
+    background-color: hotpink;
+}
+

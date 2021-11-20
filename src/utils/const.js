@@ -1,0 +1,5 @@
+export const PROFILE_ROUTE = '/profile'
+export const MESSAGE_ROUTE = '/message'
+export const NEWS_ROUTE = '/news'
+export const MUSIC_ROUTE = '/music'
+export const SETTINGS_ROUTE = '/settings'

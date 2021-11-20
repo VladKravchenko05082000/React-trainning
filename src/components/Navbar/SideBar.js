@@ -1,24 +1,26 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import style from './Sidebar.module.css';
+import { PROFILE_ROUTE, MESSAGE_ROUTE, NEWS_ROUTE, MUSIC_ROUTE, SETTINGS_ROUTE } from "../../utils/const";
 
 const SideBar = () => {
    return (
       <nav className={style.Main__sidebar}>
          <ul>
             <li >
-               <a href="#s" className={style.item}>Profile</a>
+               <NavLink to={PROFILE_ROUTE} activeClassName={style.activeLink} className={style.item}>Profile</NavLink>
             </li>
             <li >
-               <a href="#s" className={style.item}>Massage</a>
+               <NavLink to={MESSAGE_ROUTE} activeClassName={style.activeLink} className={style.item}>Massage</NavLink>
             </li>
             <li >
-               <a href="#s" className={style.item}>News</a>
+               <NavLink to={NEWS_ROUTE} activeClassName={style.activeLink} className={style.item}>News</NavLink>
             </li>
             <li >
-               <a href="#s" className={style.item}>Music</a>
+               <NavLink to={MUSIC_ROUTE} activeClassName={style.activeLink} className={style.item}>Music</NavLink>
             </li>
             <li >
-               <a href="#s" className={style.item}>Settings</a>
+               <NavLink to={SETTINGS_ROUTE} activeClassName={style.activeLink} className={style.item}>Settings</NavLink>
             </li>
          </ul>
       </nav>

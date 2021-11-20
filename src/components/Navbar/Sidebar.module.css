@@ -5,5 +5,12 @@
 
 .item{
    color: white;
+   display: block;
+   padding: 5px 0px;
+   text-align: center;
+}
+
+a.activeLink{
+   color: aquamarine;
 }
 

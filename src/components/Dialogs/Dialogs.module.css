@@ -1,0 +1,49 @@
+.Dialogs{
+   display: grid;
+   grid-template-columns: 1fr 10fr;
+   background-color: wheat; 
+   
+}
+
+.Dialogs__list{
+   padding: 10px;
+   border: 3px solid rebeccapurple;
+   margin: 0px 1px 0px 0px;
+}
+
+.list__items{
+   
+}
+
+.list__item{
+   margin: 0px 0px 20px 10px;
+   position: relative; 
+}
+
+
+.list__item::after{
+   content: "";
+   position: absolute;
+   background-color: whitesmoke;
+   width: 5px;
+   height: 5px;
+   right: 60px;
+   top: 3px;
+   border-radius: 50%;
+}
+
+.Dialogs__conversation{
+   
+   padding: 10px;
+   border: 3px solid #000;
+}
+
+
+
+.conversation__items{
+   padding: 10px 0px 0px 30px;
+}
+
+.conversation__item{
+   margin: 0px 0px 20px 0px;
+}
