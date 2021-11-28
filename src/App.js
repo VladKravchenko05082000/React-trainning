@@ -5,11 +5,12 @@ import { publicRoutes } from "./store/routes";
 import Header from "./components/Header/Header";
 import SideBar from "./components/Navbar/SideBar";
 import { PROFILE_ROUTE } from './utils/const';
+import Profile from './components/Profile/Profile';
 
 
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className="Main__wrapper">
@@ -20,6 +21,7 @@ const App = () => {
             publicRoutes.map(({ path, Component }) =>
               <Route key={path} path={path} component={Component} />
             )
+
           }
           <Redirect to={PROFILE_ROUTE} />
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './FriendsList.module.css';
-import state from "../../../store/state";
+import store from "../../../store/state";
 
 
 const FriendsList = (props) => {
@@ -11,7 +11,7 @@ const FriendsList = (props) => {
          </div>
          <ul className={style.items}>
             {
-               state.friendsListNavBar.friendsListData.map(friendList => (
+               store._state.friendsListNavBar.friendsListData.map(friendList => (
                   <li className={style.item} key={friendList.id}>
                      <img key={friendList.id} src={friendList.avatar} />
                      <div className={style.name}>

@@ -1,3 +1,30 @@
 .Main__content{
    padding: 15px 0px 0px 0px;
 }
+
+.Main__content__title{
+   padding: 0px 0px 20px 0px;
+   display: flex;
+   justify-content: center;
+   text-transform: uppercase;
+   font-weight: 900;
+   font-size: 30px;
+}
+
+.message__form{
+   display: flex;
+   flex-direction: column;
+   max-width: 60%;
+   margin: 0px auto;
+   padding: 0px 0px 20px 0px;
+}
+
+.message__input{
+   padding: 20px;
+}
+
+.message__button{
+   padding: 10px;
+   border-bottom: 1px #000 solid;
+   background-color: aqua;
+}

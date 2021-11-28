@@ -69,3 +69,18 @@
    border-radius: 5px;
 }
 
+.message__form{
+   display: flex;
+   flex-direction: column;
+   padding: 30px 0px 0px 0px;
+}
+
+.message__input{
+   padding: 20px;
+}
+
+.message__button{
+   padding: 10px;
+   border-bottom: 1px #000 solid;
+   background-color: aqua;
+}

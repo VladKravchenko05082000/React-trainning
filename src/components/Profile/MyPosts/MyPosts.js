@@ -1,24 +1,39 @@
 import React from 'react';
 import style from "./MyPosts.module.css";
 import Post from './Post/Post';
-import state from "../../../store/state";
+import store from "../../../store/state";
 
+const MyPosts = (props) => {
+   let refPost = React.createRef();
 
-const MyPosts = () => {
+   let newPost = () => {
+      store.dispatch(store.newPostActionCreator());
+   }
+
+   let clearPost = () => {
+      let text = refPost.current.value = "";
+   }
+
+   let onPostChange = () => {
+      let text = refPost.current.value;
+      store.dispatch(store.onPostChangeActionCreator(text));
+   }
 
 
 
    return (
       <div className={style.Main__content}>
          <div>
-            <h3>My post</h3>
+            <h3 className={style.Main__content__title}>My post</h3>
          </div>
          <div>
-            <textarea></textarea>
-            <button>Create Post</button>
-            <button>Remove</button>
+            <div className={style.message__form}>
+               <input className={style.message__input} value={store._state.profilePage.profilePostMassage} ref={refPost} onChange={onPostChange} />
+               <button className={style.message__button} onClick={newPost}>Create</button>
+               <button className={style.message__button} onClick={clearPost}>Clear</button>
+            </div>
             <div className={style.posts}>
-               {state.profilePage.postListData.map(postList =>
+               {store._state.profilePage.postListData.map(postList =>
                   <Post key={postList.id} massage={postList.massage} likesCount={postList.likesCount} />
                )}
             </div>
