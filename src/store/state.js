@@ -80,18 +80,7 @@ let store = {
       this._state.dialogsPage.dialogstMassage = newMassages;
       this._callSubscribe(this._state);
    },
-
-
-
-
-
-
-
-
-
-
-
-
+   /////////// dispatch functionality
    dispatch(action) {
       if (action.type === newPostActionType) {
          this.__addPost();
