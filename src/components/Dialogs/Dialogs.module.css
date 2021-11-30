@@ -83,4 +83,8 @@
    padding: 10px;
    border-bottom: 1px #000 solid;
    background-color: aqua;
+   text-transform: uppercase;
+   font-weight: 900;
+   letter-spacing: 1.5px;
+   font-size: 18px;
 }

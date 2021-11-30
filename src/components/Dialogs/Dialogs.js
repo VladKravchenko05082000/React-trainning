@@ -3,19 +3,20 @@ import style from './Dialogs.module.css'
 import UserList from './UserList/UserList';
 import Conversation from './Conversation/Conversation';
 import store from "../../store/state";
+import { newMassageActionCreator, onMessageChangeActionCreator } from '../../store/dialogsPageReducer';
 
 
 
 const Dialogs = (props) => {
-   let refMessage = React.createRef();
 
    let newMassage = () => {
-      store.dispatch(store.newMassageActionCreator());
+      store.dispatch(newMassageActionCreator());
    }
 
-   let onMessageChange = () => {
-      let text = refMessage.current.value;
-      store.dispatch(store.onMessageChangeActionCreator(text));
+
+   let onMessageChange = (e) => {
+      let text = e.target.value;
+      store.dispatch(onMessageChangeActionCreator(text));
    }
 
    return (
@@ -42,8 +43,8 @@ const Dialogs = (props) => {
                )}
             </ul>
             <div className={style.message__form}>
-               <input className={style.message__input} onChange={onMessageChange} value={store._state.dialogsPage.dialogstMassage} ref={refMessage} />
-               <button className={style.message__button} onClick={newMassage}>Create</button>
+               <input className={style.message__input} onChange={onMessageChange} value={store._state.dialogsPage.dialogstMassage} placeholder="Enter you`re massage" />
+               <button className={style.message__button} onClick={newMassage}>Send massage</button>
             </div>
          </div>
       </div >

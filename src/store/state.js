@@ -2,11 +2,11 @@ import avatar1 from "../assets/1.jpg";
 import avatar2 from "../assets/2.jpg";
 import avatar3 from "../assets/3.jpg";
 import avatar4 from "../assets/4.png";
+import dialogsPageReducer from "./dialogsPageReducer";
+import friendsListNavBarReducer from "./friendsListNavBarReducer";
+import profilePageReducer from "./profilePageReducer";
 
-const newPostActionType = "addPost";
-const onPostChangeActionType = "changePost";
-const newMassageActionType = "addMessage";
-const onMessageChangeActionType = "changeMassage";
+
 
 let store = {
    _state: {
@@ -53,68 +53,11 @@ let store = {
       this._callSubscribe = observer;//Паттерн observer
    },
 
-   __addPost() {
-      let creatNewPost = {
-         id: 4, massage: this._state.profilePage.profilePostMassage, likesCount: 0
-      };
-      this._state.profilePage.postListData.push(creatNewPost);
-      this._state.profilePage.profilePostMassage = ""
-      this._callSubscribe(this._state);
-   },
-
-   __changePost(newText) {
-      this._state.profilePage.profilePostMassage = newText;
-      this._callSubscribe(this._state);
-   },
-
-   __addMessage() {
-      let createMassage = {
-         id: 5, massage: this._state.dialogsPage.dialogstMassage
-      };
-      this._state.dialogsPage.conversationListData.push(createMassage);
-      this._state.dialogsPage.dialogstMassage = ""
-      this._callSubscribe(this._state);
-   },
-
-   __changeMassage(newMassages) {
-      this._state.dialogsPage.dialogstMassage = newMassages;
-      this._callSubscribe(this._state);
-   },
-   /////////// dispatch functionality
    dispatch(action) {
-      if (action.type === newPostActionType) {
-         this.__addPost();
-
-      } else if (action.type === onPostChangeActionType) {
-         this.__changePost(action.newText);
-
-      } else if (action.type === newMassageActionType) {
-         this.__addMessage();
-
-      }
-      else if (action.type === onMessageChangeActionType) {
-         this.__changeMassage(action.newMassages);
-      }
-   },
-
-   newPostActionCreator() {
-      let action = { type: newPostActionType };
-      return action;
-   },
-
-   onPostChangeActionCreator(text) {
-      let action = { type: onPostChangeActionType, newText: text };
-      return action;
-   },
-
-   newMassageActionCreator() {
-      let action = { type: newMassageActionType };
-      return action;
-   },
-
-   onMessageChangeActionCreator(text) {
-      let action = { type: onMessageChangeActionType, newMassages: text }
-      return action;
+      this._state.dialogsPage = dialogsPageReducer(this._state.dialogsPage, action);
+      this._state.friendsListNavBar = friendsListNavBarReducer(this._state.friendsListNavBar, action);
+      this._state.profilePage = profilePageReducer(this._state.profilePage, action);
+      this._callSubscribe(this._state);
    }
 }
 
