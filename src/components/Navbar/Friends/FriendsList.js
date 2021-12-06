@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './FriendsList.module.css';
-import store from "../../../store/state";
+import store from "../../../store/redux-store";
+import { initialState } from "../../../store/friendsListNavBarReducer";
 
 
 const FriendsList = (props) => {
@@ -11,7 +12,7 @@ const FriendsList = (props) => {
          </div>
          <ul className={style.items}>
             {
-               store._state.friendsListNavBar.friendsListData.map(friendList => (
+               initialState.friendsListData.map(friendList => (
                   <li className={style.item} key={friendList.id}>
                      <img key={friendList.id} src={friendList.avatar} />
                      <div className={style.name}>

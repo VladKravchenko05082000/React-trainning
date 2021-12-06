@@ -1,5 +1,5 @@
 import { PROFILE_ROUTE, MESSAGE_ROUTE, NEWS_ROUTE, MUSIC_ROUTE, SETTINGS_ROUTE } from "../utils/const";
-import Dialogs from "../components/Dialogs/Dialogs";
+import DialogsContainer from "../components/Dialogs/DialogsContainer";
 import Music from "../components/Music/Music";
 import Profile from "../components/Profile/Profile";
 import Settings from "../components/Settings/Settings";
@@ -13,7 +13,7 @@ export const publicRoutes = [
 
    {
       path: MESSAGE_ROUTE,
-      Component: Dialogs
+      Component: DialogsContainer
    },
 
    {

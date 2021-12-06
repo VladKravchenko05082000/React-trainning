@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from "./store/state"
+import store from "./store/redux-store"
 
-let renderEntireTree = (state) => {
+let renderEntireTree = () => {
    ReactDOM.render(
       <React.StrictMode>
          <App />
