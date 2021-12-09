@@ -31,7 +31,7 @@ const Dialogs = (props) => {
          </div>
          <div className={style.Dialogs__conversation}>
             <ul className={style.conversation__items}>
-               {props.conversationListf.map(conversationList =>
+               {props.listConversation.map(conversationList =>
                   <li className={conversationList.id % 2 === 0 ? style.conversation__item : style.conversation__item__right}
                      key={conversationList.id}>
                      <p>

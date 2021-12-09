@@ -19,7 +19,7 @@ export let initialState = {
       { id: 3, massage: "Как дела?" },
       { id: 4, massage: "Норм" },
    ],
-   dialogsMassage: "1"
+   dialogsMassage: ""
 }
 
 export const dialogsPageReducer = (state = initialState, action) => {

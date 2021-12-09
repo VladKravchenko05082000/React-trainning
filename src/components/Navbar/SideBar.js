@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './Sidebar.module.css';
 import { PROFILE_ROUTE, MESSAGE_ROUTE, NEWS_ROUTE, MUSIC_ROUTE, SETTINGS_ROUTE } from "../../utils/const";
-import FriendsList from './Friends/FriendsList';
+import FriendsListContainer from './Friends/FriendsListContainer';
 
 const SideBar = () => {
    return (
@@ -24,7 +24,7 @@ const SideBar = () => {
                <NavLink to={SETTINGS_ROUTE} activeClassName={style.activeLink} className={style.item}>Settings</NavLink>
             </li>
             <li className={style.FriendsList}>
-               <FriendsList />
+               <FriendsListContainer />
             </li>
          </ul>
       </nav>

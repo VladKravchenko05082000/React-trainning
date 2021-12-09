@@ -1,28 +1,25 @@
-import React from 'react';
-import store from "../../store/redux-store";
 import { newMassageActionCreator, onMessageChangeActionCreator } from '../../store/dialogsPageReducer';
 import Dialogs from './Dialogs';
+import { connect } from 'react-redux';
 
-
-
-const DialogsContainer = (props) => {
-   
-   let userList = store.getState().dialogsPage.userListData;
-   let conversationListf = store.getState().dialogsPage.conversationListData;
-   let dialogsMassage = store.getState().dialogsPage.dialogsMassage;
-
-   let newMassage = () => {
-      store.dispatch(newMassageActionCreator());
+let mapStateToProps = (state) => {
+   return {
+      userList: state.dialogsPage.userListData,
+      listConversation: state.dialogsPage.conversationListData,
+      dialogsMassage: state.dialogsPage.dialogsMassage
    }
-
-   let onMessageChange = (text) => {
-      store.dispatch(onMessageChangeActionCreator(text));
-   }
-
-   return (
-      <Dialogs newMassage={newMassage} massageChange={onMessageChange} userList={userList}
-         conversationListf={conversationListf} dialogsMassage={dialogsMassage}  />
-   );
 }
+let mapDispatchToProps = (dispatch) => {
+   return {
+      newMassage: () => {
+         dispatch(newMassageActionCreator());
+      },
+      massageChange: (text) => {
+         dispatch(onMessageChangeActionCreator(text));
+      }
+   }
+}
+
+const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
 
 export default DialogsContainer;

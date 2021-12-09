@@ -1,34 +1,35 @@
 import React from 'react';
-import store from '../../../store/redux-store';
-import { addPostActionCreator, onPostChangeActionCreator, initialState } from "../../../store/profilePageReducer";
+import { addPostActionCreator, onPostChangeActionCreator } from "../../../store/profilePageReducer";
 import MyPosts from './MyPosts';
+import { connect } from 'react-redux';
 
 
+let refPosts = React.createRef();
 
-const MyPostsContainer = (props) => {
-   let refPost = React.createRef();
-   let posts = store.getState().profilePage.postListData;
-   let postMassages = store.getState().profilePage.profilePostMassage;
-
-   let newPost = () => {
-      store.dispatch(addPostActionCreator())
-      refPost.current.value = "";
+let mapStateToProps = (state) => {
+   return {
+      refPost: refPosts,
+      posts: state.profilePage.postListData,
+      postMassage: state.profilePage.profilePostMassage
    }
-
-   let clearPost = () => {
-      refPost.current.value = "";
-   }
-
-   let onPostChange = () => {
-      let text = refPost.current.value;
-      store.dispatch(onPostChangeActionCreator(text))
-   }
-
-   return (
-      <MyPosts clearPost={clearPost} onPostChange={onPostChange} newPost={newPost} refPost={refPost}
-         posts={posts} postMassage={postMassages}
-      />
-   );
 }
+
+let mapDispatchToProps = (dispatch) => {
+   return {
+      clearPost: () => {
+         refPosts.current.value = "";
+      },
+      onPostChange: () => {
+         let text = refPosts.current.value;
+         dispatch(onPostChangeActionCreator(text))
+      },
+      newPost: () => {
+         dispatch(addPostActionCreator())
+         refPosts.current.value = "";
+      }
+   }
+}
+
+const MyPostsContainer = connect(mapStateToProps,mapDispatchToProps)(MyPosts);
 
 export default MyPostsContainer;

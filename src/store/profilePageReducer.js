@@ -7,21 +7,27 @@ export let initialState = {
       { id: 2, massage: "Hi, it`s my second post", likesCount: 20 },
       { id: 3, massage: "Hi, it`s my third post", likesCount: 25 }
    ],
-   profilePostMassage: "1"
+   profilePostMassage: ""
 }
 
 const profilePageReducer = (state = initialState, action) => {
    switch (action.type) {
-      case newPostActionType:
+      case newPostActionType: {
          let creatNewPost = {
             id: 4, massage: state.profilePostMassage, likesCount: 0
          };
-         state.postListData.push(creatNewPost);
-         state.profilePostMassage = ""
-         return state;
-      case onPostChangeActionType:
-         state.profilePostMassage = action.newText;
-         return state;
+         let copyState = { ...state }
+         copyState.postListData = [...state.postListData];
+         copyState.postListData.push(creatNewPost);
+         copyState.profilePostMassage = ""
+         return copyState;
+      }
+      //для того чтобы не ебаться с именнами переменных можно использовать блочную область видимости {}в case
+      case onPostChangeActionType: {
+         let copyState = { ...state }
+         copyState.profilePostMassage = action.newText;
+         return copyState;
+      }
       default:
          return state
    }
