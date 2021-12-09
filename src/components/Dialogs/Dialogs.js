@@ -16,6 +16,7 @@ const Dialogs = (props) => {
       let text = e.target.value;
       props.massageChange(text);
    }
+   debugger;
 
    return (
       <div className={style.Dialogs}>

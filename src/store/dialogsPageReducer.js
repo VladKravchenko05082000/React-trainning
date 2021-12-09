@@ -24,16 +24,21 @@ export let initialState = {
 
 export const dialogsPageReducer = (state = initialState, action) => {
    switch (action.type) {
-      case newMassageActionType:
+      case newMassageActionType: {
          let createMassage = {
             id: 5, massage: state.dialogsMassage
          };
-         state.conversationListData.push(createMassage);
-         state.dialogsMassage = ""
-         return state;
-      case onMessageChangeActionType:
-         state.dialogsMassage = action.newMassages;
-         return state;
+         let copyState = { ...state }
+         copyState.conversationListData = [...state.conversationListData]
+         copyState.conversationListData.push(createMassage);
+         copyState.dialogsMassage = ""
+         return copyState;
+      }
+      case onMessageChangeActionType: {
+         let copyState = { ...state }
+         copyState.dialogsMassage = action.newMassages;
+         return copyState;
+      }
       default:
          return state;
    }
