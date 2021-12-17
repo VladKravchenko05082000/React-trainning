@@ -5,6 +5,7 @@ import avatar4 from "../assets/4.png";
 
 const newMassageActionType = "addMessage";
 const onMessageChangeActionType = "changeMassage";
+const SET_USERS = "setUsers";
 
 export let initialState = {
    userListData: [
@@ -22,7 +23,7 @@ export let initialState = {
    dialogsMassage: ""
 }
 
-export const dialogsPageReducer = (state = initialState, action) => {
+const dialogsPageReducer = (state = initialState, action) => {
    switch (action.type) {
       case newMassageActionType: {
          let createMassage = {
@@ -47,5 +48,6 @@ export const dialogsPageReducer = (state = initialState, action) => {
 export const newMassageActionCreator = () => ({ type: newMassageActionType });
 export const onMessageChangeActionCreator = (text) =>
    ({ type: onMessageChangeActionType, newMassages: text })
+export const setConversationUsers = (userListData) => ({ type: SET_USERS, userListData })
 
 export default dialogsPageReducer;

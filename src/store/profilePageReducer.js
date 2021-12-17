@@ -35,6 +35,7 @@ const profilePageReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = () => ({ type: newPostActionType });
 export const onPostChangeActionCreator = (text) =>
-   ({ type: onPostChangeActionType, newText: text })
+   ({ type: onPostChangeActionType, newText: text });
+
 
 export default profilePageReducer;

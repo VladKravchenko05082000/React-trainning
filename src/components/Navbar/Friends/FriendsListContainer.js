@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { setFriends } from '../../../store/friendsListNavBarReducer';
 import FriendsList from './FriendsList';
 
 let mapStateToProps = (state) => {
@@ -8,7 +9,10 @@ let mapStateToProps = (state) => {
 }
 
 let mapDispatchToProps = (dispatch) => {
-
+   return{
+      
+   }
+   
 }
 
 const FriendsListContainer = connect(mapStateToProps, mapDispatchToProps)(FriendsList);

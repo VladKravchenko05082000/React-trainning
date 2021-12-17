@@ -1,4 +1,4 @@
-import { newMassageActionCreator, onMessageChangeActionCreator } from '../../store/dialogsPageReducer';
+import { newMassageActionCreator, onMessageChangeActionCreator, setConversationUsers } from '../../store/dialogsPageReducer';
 import Dialogs from './Dialogs';
 import { connect } from 'react-redux';
 
@@ -16,6 +16,9 @@ let mapDispatchToProps = (dispatch) => {
       },
       massageChange: (text) => {
          dispatch(onMessageChangeActionCreator(text));
+      },
+      setConversationUsers: (userListData) => {
+         dispatch(setConversationUsers(userListData))
       }
    }
 }
