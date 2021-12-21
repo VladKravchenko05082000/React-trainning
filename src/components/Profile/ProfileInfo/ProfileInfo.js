@@ -1,14 +1,68 @@
 import React from 'react';
 import style from "./ProfileInfo.module.css";
+import Preloader from '../../common/Preloader';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+   if (!props.profile) {
+      return <Preloader />
+   }
+
    return (
       <div className={style.Main__content}>
-         <div className={style.Main__screen}>
-            <img src='https://images.ctfassets.net/hrltx12pl8hq/7yQR5uJhwEkRfjwMFJ7bUK/dc52a0913e8ff8b5c276177890eb0129/offset_comp_772626-opt.jpg?fit=fill&w=800&h=300' alt='Не удалось загрузить картинку' />
-         </div>
          <div>
-            ava+disc
+            <img src={props.profile.photos.large} />
+            <div>Обо мне: {props.profile.aboutMe}</div>
+            <div>
+               <h1>Контакты</h1>
+               <div>
+                  <div>
+                     <span>
+                        {props.profile.contacts.facebook}
+                     </span>
+                  </div>
+                  <div>
+                     <span>
+                        {props.profile.contacts.website}
+                     </span>
+                  </div>
+                  <div>
+                     <span>
+                        {props.profile.contacts.vk}
+                     </span>
+                  </div>
+                  <div>
+                     <span>
+                        {props.profile.contacts.twitter}
+                     </span>
+                  </div>
+                  <div>
+                     <span>
+                        {props.profile.contacts.instagram}
+                     </span>
+                  </div>
+                  <div>
+                     <span>
+                        {props.profile.contacts.youtube}
+                     </span>
+                  </div>
+                  <div>
+                     <span>
+                        {props.profile.contacts.github}
+                     </span>
+                  </div>
+                  <div>
+                     <span>
+                        {props.profile.contacts.mainLink}
+                     </span>
+                  </div>
+               </div>
+               <div>
+                  Поиск работы: {props.profile.lookingForAJob ? props.profile.lookingForAJobDescription : "Не ищю, спасибо"}
+               </div>
+               <div>
+                  Полное имя Самурая: {props.profile.fullName}
+               </div>
+            </div>
          </div>
       </div>
    );

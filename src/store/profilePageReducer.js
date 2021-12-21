@@ -1,15 +1,17 @@
 const newPostActionType = "addPost";
 const onPostChangeActionType = "changePost";
+const SET_USERS_PROFILE = "setUsersProfile";
 
 export let initialState = {
    postListData: [
       { id: 1, massage: "Hi, it`s my first post", likesCount: 15 },
-      { id: 2, massage: "Hi, it`s my second post", likesCount: 20 },
+      { id: 2, massage: "Hi, it`s my second post", likesCount: 20},
       { id: 3, massage: "Hi, it`s my third post", likesCount: 25 }
    ],
-   profilePostMassage: ""
+   profilePostMassage: "",
+   profile: null
 }
-
+debugger;
 const profilePageReducer = (state = initialState, action) => {
    switch (action.type) {
       case newPostActionType: {
@@ -28,6 +30,11 @@ const profilePageReducer = (state = initialState, action) => {
          copyState.profilePostMassage = action.newText;
          return copyState;
       }
+      case SET_USERS_PROFILE: {
+         let copyState = { ...state };
+         copyState.profile = action.profile;
+         return copyState;
+      }
       default:
          return state
    }
@@ -36,6 +43,6 @@ const profilePageReducer = (state = initialState, action) => {
 export const addPostActionCreator = () => ({ type: newPostActionType });
 export const onPostChangeActionCreator = (text) =>
    ({ type: onPostChangeActionType, newText: text });
-
+export const setUsersProfile = (profile) => ({ type: SET_USERS_PROFILE, profile });
 
 export default profilePageReducer;

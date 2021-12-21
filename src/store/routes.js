@@ -1,7 +1,7 @@
 import { PROFILE_ROUTE, MESSAGE_ROUTE, FINDUSERS_ROUTE, MUSIC_ROUTE, SETTINGS_ROUTE } from "../utils/const";
 import DialogsContainer from "../components/Dialogs/DialogsContainer";
 import Music from "../components/Music/Music";
-import Profile from "../components/Profile/Profile";
+import {ProfileContainer} from "../components/Profile/ProfileContainer";
 import Settings from "../components/Settings/Settings";
 import { FindUsersContainer } from "../components/FindUsers/FindUsersContainer";
 
@@ -9,7 +9,7 @@ import { FindUsersContainer } from "../components/FindUsers/FindUsersContainer";
 export const publicRoutes = [
    {
       path: PROFILE_ROUTE,
-      Component: Profile
+      Component: ProfileContainer
    },
 
    {

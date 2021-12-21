@@ -24,7 +24,7 @@ const Dialogs = (props) => {
             <ul className={style.list__items}>
                {props.userList.map(userlist =>
                   <li className={style.list__item} key={userlist.id}>
-                     <img key={userlist.id} src={userlist.avatar} />
+                     <img key={userlist.id} src={userlist.avatar} alt='UserAvatar' />
                      <UserList id={userlist.id} name={userlist.name} />
                   </li>
                )}

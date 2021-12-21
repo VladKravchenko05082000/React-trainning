@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPostActionCreator, onPostChangeActionCreator, setPosts } from "../../../store/profilePageReducer";
+import { addPostActionCreator, onPostChangeActionCreator } from "../../../store/profilePageReducer";
 import MyPosts from './MyPosts';
 import { connect } from 'react-redux';
 
@@ -10,7 +10,7 @@ let mapStateToProps = (state) => {
    return {
       refPost: refPosts,
       posts: state.profilePage.postListData,
-      postMassage: state.profilePage.profilePostMassage
+      postMassage: state.profilePage.profilePostMassage,
    }
 }
 

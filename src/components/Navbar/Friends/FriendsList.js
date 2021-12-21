@@ -12,7 +12,7 @@ const FriendsList = (props) => {
             {
                props.friendsList.map(friendList => (
                   <li className={style.item} key={friendList.id}>
-                     <img key={friendList.id} src={friendList.avatar} />
+                     <img key={friendList.id} src={friendList.avatar} alt='FriendAvatar' />
                      <div className={style.name}>
                         {friendList.name}
                      </div>

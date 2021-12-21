@@ -5,10 +5,6 @@ import { publicRoutes } from "./store/routes";
 import Header from "./components/Header/Header";
 import SideBar from "./components/Navbar/SideBar";
 import { PROFILE_ROUTE } from './utils/const';
-import Profile from './components/Profile/Profile';
-
-
-
 
 const App = (props) => {
   return (

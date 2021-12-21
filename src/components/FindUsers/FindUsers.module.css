@@ -15,3 +15,25 @@
    margin: 0px 0px 0px 15px;
 }
 
+.pageActive{
+   color: aqua;
+}
+
+.pageCount{
+   color: brown;
+   
+}
+
+.pages__container{
+   cursor: pointer;
+   margin: 15px;
+}
+
+.pages__container button{
+   margin: 0px 15px 10px 0px;
+   padding: 3px;
+   
+   
+}
+
+
