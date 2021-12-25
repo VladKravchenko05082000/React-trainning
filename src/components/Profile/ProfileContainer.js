@@ -8,7 +8,6 @@ import { setUsersProfile } from '../../store/profilePageReducer';
 class ProfileAPI extends React.Component {
 
    componentDidMount() {
-
       axios.get(`https://social-network.samuraijs.com/api/1.0/profile/8`)
          .then(response => {
             this.props.setUsersProfile(response.data);
