@@ -5,13 +5,13 @@ const SET_USERS_PROFILE = "setUsersProfile";
 export let initialState = {
    postListData: [
       { id: 1, massage: "Hi, it`s my first post", likesCount: 15 },
-      { id: 2, massage: "Hi, it`s my second post", likesCount: 20},
+      { id: 2, massage: "Hi, it`s my second post", likesCount: 20 },
       { id: 3, massage: "Hi, it`s my third post", likesCount: 25 }
    ],
    profilePostMassage: "",
    profile: null
 }
-debugger;
+
 const profilePageReducer = (state = initialState, action) => {
    switch (action.type) {
       case newPostActionType: {

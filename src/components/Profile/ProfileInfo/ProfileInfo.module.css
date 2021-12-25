@@ -1,7 +1,48 @@
-.Main__screen{
+.Main__content{
+   text-align: center;
+   padding: 15px 0px 0px 0px;
+}
+
+.About_Me{
+   padding: 10px 0px;
+}
+
+.About_Me span{
+   font-size: 26px;
+   font-weight: 900;
+}
+
+.Contacts{
+   padding: 10px 0px;
+   font-size: 18px;
+   font-weight: 900;
+}
+
+.Contacts h1{
+   font-size: 26px;
+   font-weight: 900;
    padding: 0px 0px 10px 0px;
 }
 
-.Main__content{
-   text-align: center;
+.Contacts_item span{
+   display: block;
+   padding: 5px 0px;
+}
+
+.lookingForAJob{
+   padding: 10px 0px;
+}
+
+.lookingForAJob span{
+   font-size: 26px;
+   font-weight: 900;
+}
+
+.fullName span{
+   font-size: 26px;
+   font-weight: 900;
+}
+
+.fullName {
+   padding: 10px 0px;
 }
