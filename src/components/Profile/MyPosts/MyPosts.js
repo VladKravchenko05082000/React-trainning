@@ -15,11 +15,13 @@ const MyPosts = (props) => {
    let clearPost = () => {
       props.clearPost();
    }
+
    return (
       <div className={style.Main__content}>
          <div>
             <h3 className={style.Main__content__title}>My post</h3>
          </div>
+
          <div>
             <div className={style.message__form}>
                <input className={style.message__input} value={props.postMassage} ref={props.refPost} onChange={changePost} placeholder="Enter you`re massage" />
@@ -28,9 +30,11 @@ const MyPosts = (props) => {
             </div>
             <div className={style.posts}>
                {props.posts.map(postList =>
-                  <Post key={postList.id} massage={postList.massage} likesCount={postList.likesCount} />
+                  <Post key={postList.id} massage={postList.massage} likesCount={postList.likesCount}
+                     profile={props.profile} />
                )}
             </div>
+
          </div>
       </div>
    );

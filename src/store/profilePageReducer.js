@@ -2,21 +2,25 @@ const newPostActionType = "addPost";
 const onPostChangeActionType = "changePost";
 const SET_USERS_PROFILE = "setUsersProfile";
 
+
+
+
 export let initialState = {
    postListData: [
-      { id: 1, massage: "Hi, it`s my first post", likesCount: 15 },
-      { id: 2, massage: "Hi, it`s my second post", likesCount: 20 },
-      { id: 3, massage: "Hi, it`s my third post", likesCount: 25 }
+      { id: 1, massage: "Hi, it`s my first post", likesCount: 15, avatar: null },
+      { id: 2, massage: "Hi, it`s my second post", likesCount: 20, avatar: null },
+      { id: 3, massage: "Hi, it`s my third post", likesCount: 25, avatar: null }
    ],
    profilePostMassage: "",
-   profile: null
+   profile: null,
+   photos:null
 }
 
 const profilePageReducer = (state = initialState, action) => {
    switch (action.type) {
       case newPostActionType: {
          let creatNewPost = {
-            id: 4, massage: state.profilePostMassage, likesCount: 0
+            id: 4, massage: state.profilePostMassage, likesCount: 0, avatar: null
          };
          let copyState = { ...state }
          copyState.postListData = [...state.postListData];

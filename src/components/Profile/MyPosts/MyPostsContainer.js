@@ -6,15 +6,19 @@ import { connect } from 'react-redux';
 
 let refPosts = React.createRef();
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state, ownProps) => {
+   
    return {
       refPost: refPosts,
       posts: state.profilePage.postListData,
       postMassage: state.profilePage.profilePostMassage,
+      profile: ownProps.profile
    }
+
 }
 
 let mapDispatchToProps = (dispatch) => {
+
    return {
       clearPost: () => {
          refPosts.current.value = "";
